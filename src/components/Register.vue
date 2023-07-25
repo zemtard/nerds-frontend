@@ -21,6 +21,7 @@
       <script>
       
       import axios from 'axios';
+      //import useRouter from 'vue-router'
 
       export default {
       name:"Register",
@@ -52,6 +53,11 @@
         try {
           const response = await axios.post('http://localhost:3000/user-register', this.register_data);
           console.log("Response:", response.data);
+
+          if(this.register_data.email && this.register_data.password && this.register_data.full_name && this.register_data.phone_number && this.register_data.username){
+            this.$router.push('/login');
+          }
+          
         } catch (error) {
           console.error('Error:', error.message);
         }

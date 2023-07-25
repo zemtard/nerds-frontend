@@ -32,12 +32,19 @@
         console.log("password: " + this.login_data.password);
   
         try {
-          const response = await axios.post('http://localhost:3000/user-login', this.login_data);
-          console.log("Response:", response.data);
-        } catch (error) {
-          console.error('Error:', error.message);
-        }
-      },
+        const response = await axios.post('http://localhost:3000/user-login', this.login_data);
+        console.log("Response:", response.data);
+
+        const token = response.data.token;
+        localStorage.setItem('token', token); //storing token in localstorage for later use
+
+        this.$router.push("/home")
+        
+
+      } catch (error) {
+        console.error('Error:', error.message);
+      }
+    },
     },
   };
   </script>
