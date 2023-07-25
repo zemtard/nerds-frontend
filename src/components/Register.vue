@@ -2,8 +2,10 @@
     <div>
         <h1>Register Page Component</h1>
     </div>
-    <div>
-        <input v-model="register_data.email" type="text" name="" id="email" placeholder="Email">
+    <div class="box">
+    <input v-model="register_data.username" type="text" name="" id="username" placeholder="Username">
+    <br>
+    <input v-model="register_data.email" type="text" name="" id="email" placeholder="Email">
     <br>
     <input v-model="register_data.full_name" type="" name="" id="name" placeholder="Full Name">
     <br>
@@ -29,6 +31,7 @@
             phone_number: "",
             email: "",
             password:"",
+            username:""
         }
         }
       },
@@ -44,6 +47,7 @@
         console.log("password: " + this.register_data.password);
         console.log("name: " + this.register_data.full_name);
         console.log("phone: " + this.register_data.phone_number);
+        console.log("username: " + this.register_data.username);
   
         try {
           const response = await axios.post('http://localhost:3000/user-register', this.register_data);
@@ -59,5 +63,9 @@
       </script>
       
       <style>
-    
+      .box {
+    border-width: 10px;
+    border-color: blue;
+    border-style: solid;
+  }
       </style>
