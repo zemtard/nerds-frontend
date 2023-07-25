@@ -1,11 +1,11 @@
 <script setup>
-import Home from '../components/Home.vue'
+import Reset from '../components/ResetPassword.vue'
 </script>
 
 <template>
 
 <div>
-    <Home /> 
+    <Reset /> 
 </div>
     
 
@@ -13,7 +13,7 @@ import Home from '../components/Home.vue'
   
   <script>
   export default {
-  components: {Home,
+  components: {Reset,
 }
 
 };
