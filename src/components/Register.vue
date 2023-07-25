@@ -18,6 +18,8 @@
       
       <script>
       
+      import axios from 'axios';
+
       export default {
       name:"Register",
       data(){
@@ -36,12 +38,21 @@
       },
       
       methods:{
-    submit_register(){
+
+    async submit_register() {
         console.log("email: " + this.register_data.email);
         console.log("password: " + this.register_data.password);
         console.log("name: " + this.register_data.full_name);
         console.log("phone: " + this.register_data.phone_number);
-    }
+  
+        try {
+          const response = await axios.post('http://localhost:3000/user-register', this.register_data);
+          console.log("Response:", response.data);
+        } catch (error) {
+          console.error('Error:', error.message);
+        }
+      },
+
   }
       
       }
