@@ -69,9 +69,12 @@
       </script>
       
       <style>
-      .box {
+        .box {
     border-width: 10px;
-    border-color: blue;
+    border-color: rgb(48, 46, 46);
     border-style: solid;
+    margin-left: 40%;
+    display: inline-block;
+    padding: 5px;
   }
       </style>
